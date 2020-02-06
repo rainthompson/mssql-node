@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    h1= 'Create Product'
+    form(method='post', action='/create')
+         table.form_table(cellspacing='5', cellpadding='5',border='0')
+            tbody   
+                tr
+                    td.label Complaint #:
+                    td  
+                        input(rows='5', name='ComplaintNum')
+                tr
+                    td.label From Date:
+                    td  
+                        input(rows='5', name='FromDate')
+                tr
+                    td.label From Time:
+                    td  
+                        input(rows='5', name='FromTime')    
+                tr
+                    td.label Offense Desc:
+                    td  
+                        input(rows='5', name='OffenseDesc')
+                tr
+                    td.label Description Code:
+                    td  
+                        input(rows='5', name='DescriptionCd')
+                tr
+                    td.label Borough:
+                    td  
+                        input(rows='5', name='Borough')
+                tr
+                    td.label Premise Type:
+                    td  
+                        input(rows='5', name='PremiseType')
+                tr
+                    td
+                        input.buttonSubmit(type='submit' value='Create Crime')

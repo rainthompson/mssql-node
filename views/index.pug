@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  form(method='post', action='/' )
+    h3 Enter number of records
+    input(name='count', value=count)
+    p
+  table(style='border: 2px dashed blue; border-radius:10px')
+    tr
+      each colName in colNames
+        th= colName
+      if crimes.length > 0
+        th CRUD Links
+    each crime in crimes
+      tr
+        td
+          a(href='/display/'+crime.ComplaintNum) #{crime.ComplaintNum}
+        td= crime.Borough
+        td= crime.FromDate
+        td= crime.FromTime
+        td= crime.OffenseDesc
+        td= crime.DescriptionCd
+        td= crime.PremiseType
+        td
+          a(href='/edit/') Edit | 
+          a(href='/delete/') Delete

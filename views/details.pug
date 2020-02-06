@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    h1= 'Crime Details'
+    form(method='post', action='/create')
+         table.form_table(cellspacing='5', cellpadding='5',border='0')
+            tbody   
+                tr
+                    td.label Complaint #:
+                    td  
+                        p= crime.ComplaintNum
+                tr
+                    td.label From Date:
+                    td  
+                        p= crime.FromDate
+                tr
+                    td.label From Time:
+                    td  
+                        p= crime.FromTime   
+                tr
+                    td.label Offense Desc:
+                    td  
+                        p= crime.OffenseDesc
+                tr
+                    td.label Description Code:
+                    td  
+                        p= crime.DescriptionCd
+                tr
+                    td.label Borough:
+                    td  
+                        p= crime.Borough
+                tr
+                    td.label Premise Type:
+                    td  
+                        p= crime.PremiseType
+                tr
+                    td
+                        a(href='/') List Crimes
